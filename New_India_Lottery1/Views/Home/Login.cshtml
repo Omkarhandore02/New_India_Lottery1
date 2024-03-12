@@ -1,0 +1,186 @@
+﻿
+
+@{
+    Layout = null;
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            /*font-family: Arial, sans-serif;*/
+            /*background-color: skyblue;*/
+
+            background: url('../images/lottery.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            align-items:center;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: ghostwhite;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            height: 375px;
+            text-align: center;
+            margin: 70px auto;
+            /*font-family: Arial, sans-serif;*/
+        }
+        h2 {
+            text-align: center;
+            color: ThreeDDarkShadow;
+           
+        }
+
+        input[type="text"],
+        input[type="password"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: lawngreen;
+            color: white;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: orange;
+            }
+
+        .cancelbtn {
+            background-color: darkred;
+        }
+
+            .cancelbtn:hover {
+                background-color: indigo;
+            }
+        .error-message {
+            color: red;
+            font-size: 9px;
+            margin-top: 2px;
+            display:none;
+        }
+  </style>
+</head>
+<body>
+
+    <div class="login-container" >
+     <h2>NEW INDIA LOTTERY</h2>
+        <h2>
+        <span style="color: orangered">L</span>
+        <span style="color: forestgreen">O</span>
+        <span style="color: orange">G</span>
+        <span style="color: darkblue">I</span>
+        <span style="color: darkseagreen">N</span>
+        </h2>
+        <form action="/login" method="post" onsubmit="return validateForm()">
+            <label for="uname"><b>USERNAME</b></label>
+            <input type="text"placeholder="Enter Username" name="uname" id="uname" >
+            <div id="unameError" class="error-message"></div>
+
+            <label for="psw"><b>PASSWORD</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw">
+            <div id="pswError" class="error-message"></div>
+
+            <button type="submit">Login</button>
+            <button type="button" class="cancelbtn">Cancel</button>
+            <label>
+               <input type="checkbox" checked="checked" name="keeplogin">Keep Me Login
+            </label>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var unameInput = document.getElementById("uname");
+            var pswInput = document.getElementById("psw");
+            var unameError = document.getElementById("unameError");
+            var pswError = document.getElementById("pswError");
+
+            var isValid = true;
+            var uppercaseRegex = /[A-Z]/;
+            var symbolRegex = /[!#@@$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+
+            if (unameInput.value === "" ) {
+                unameError.innerHTML = "USERNAME IS REQUIRED";
+                unameError.style.display = "block";
+                isValid = false;
+            } else if (!uppercaseRegex.test(unameInput.value) || !symbolRegex.test(unameInput.value)) {
+                unameError.innerHTML = "USERNAME MUST CONTAIN UPPERCASE LETTER AND SYMBOLS";
+                unameError.style.display = "block";
+                isValid = false;
+            } else {
+                unameError.style.display = "none";
+            }
+
+            if (pswInput.value === "") {
+                pswError.innerHTML = "PASSWORD IS REQUIRED";
+                pswError.style.display = "block";
+                isValid = false;
+            } else if (!uppercaseRegex.test(pswInput.value) || !symbolRegex.test(pswInput.value)) {
+                pswError.innerHTML = "PASSWORD MUST CONTAIN UPPERCASE LETTER AND SYMBOLS";
+                pswError.style.display = "block";
+                isValid = false;
+            } else {
+                pswError.style.display = "none";
+            }
+                  
+            return isValid;
+        }
+     </script>
+  </body>
+</html>
+                                                           
+                                            
+          
+                                 
+                                                                                       
+                                                                 
+                                             
+                                                                                                                                 
+                
+                              
+                                                                                                
+                     
+                                                                           
+                               
+                                                                      
+
+         
+                                    
+
+                                   
+                                                              
+                  
+                                
+         
+                                                                 
+                         
+
+                                                 
+                                                                           
+                                 
+                                       
+                                                                         
+                                                 
+                                                                   
+                       
+                                                
